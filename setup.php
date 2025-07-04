@@ -61,7 +61,7 @@ function plugin_init_rolecategoriesitil()
 function plugin_version_rolecategoriesitil()
 {
     return [
-        'name'           => 'RoleCategoriesItil',
+        'name'           => 'Видимость категорий',
         'version'        => PLUGIN_ROLECATEGORIESITIL_VERSION,
         'author'         => '<a href="#">Yahin RA\'</a>',
         'license'        => 'GNUv3',
