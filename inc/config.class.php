@@ -198,4 +198,24 @@ class PluginRolecategoriesitilConfig extends CommonDBTM {
         }
         return true;
     }
+
+    public static function addITILCategory($item)
+    {
+      // Логика добавления связи категории и профиля при создании категории
+      if(!$item->fields['id']) //если ид категории 0 , возвращаем
+      {
+        return;
+      }
+      $profiles = new Profile(); //Получаем все профили
+      foreach($profiles->find() AS $id => $data)
+      {
+        $rolecategoriesitil  = new self();
+        //Делаем привязку категории к профилю связб многие ко многим
+        $rolecategoriesitil->add([
+          'profile_id'       => $id,
+          'itilcategory_id'  => $item->fields['id'],
+          'active'           => 0
+        ]);
+      }
+    }
   }
