@@ -46,6 +46,7 @@ function plugin_init_rolecategoriesitil()
 {
     global $PLUGIN_HOOKS;
     Plugin::registerClass('PluginRolecategoriesitilConfig', ['addtabon' => 'Profile']);
+    Plugin::registerClass('PluginRolecategoriesitilConfigitil', ['addtabon' => 'ITILCategory']);
     $PLUGIN_HOOKS['post_init']['rolecategoriesitil'] = ['PluginRolecategoriesitilItilcategories' , 'init'];
   //  $PLUGIN_HOOKS['config_page']['rolecategoriesitil'] = 'front/profile.form.php';
     //перехватываем событие после добавления категории
